@@ -161,7 +161,7 @@ returned rather than an array with a length of one.
 
 ## Other uses
 
-You can override one or both of mappers to customise the mapping:
+You can override one or both of the mappers to customise the mapping:
 
 ```js
 const to = require( './path/to/some/custom/to' )

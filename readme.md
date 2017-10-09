@@ -159,6 +159,27 @@ returned rather than an array with a length of one.
 [ 1, 2 ]
 ```
 
+## Other uses
+
+You can override one or both of mappers to customise the mapping:
+
+```js
+const to = require( './path/to/some/custom/to' )
+const from = require( './path/to/some/custom/from' )
+
+const mapper = Mapper( { to, from } )
+```
+
+See the defaults under `/src/` to see how they are implemented, or
+[mojule mapper](https://github.com/mojule/mapper) for more documentation on how
+the mapper works.
+
+Some use cases that this enables include:
+
+- adding types other than just JSON-compatible values
+- using your own markup structure to represent the values
+- scraping data from existing web pages with custom predicates
+
 ## Complex example, JSON to DOM
 
 ### Input

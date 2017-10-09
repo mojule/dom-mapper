@@ -1,6 +1,6 @@
 {
   "name": "@mojule/dom-mapper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Map values to and from DOM nodes",
   "main": "index.js",
   "directories": {

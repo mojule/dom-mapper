@@ -2,11 +2,11 @@
 
 const Mapper = require( '@mojule/mapper' )
 const defaultOptions = require( './src/default-options' )
-const from = require( './src/from' )
-const to = require( './src/to' )
 
 const DomMapper = options => {
   options = Object.assign( {}, defaultOptions, options )
+
+  const { from, to } = options
 
   return {
     from: Mapper( Object.assign( {}, from, options ) ),

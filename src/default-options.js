@@ -1,5 +1,8 @@
 'use strict'
 
-const defaultOptions = {}
+const from = require( './from' )
+const to = require( './to' )
+
+const defaultOptions = { from, to }
 
 module.exports = defaultOptions

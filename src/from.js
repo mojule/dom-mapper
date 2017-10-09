@@ -1,6 +1,9 @@
 'use strict'
 
-const isDataElement = ( el, type ) => el.nodeType === 1 && el.dataset.type === type
+const is = require( '@mojule/is' )
+
+const isDataElement = ( el, type ) =>
+  el.nodeType === 1 && el.dataset.type === type
 
 const predicates = {
   stringElement: value => isDataElement( value, 'string' ),
@@ -9,33 +12,43 @@ const predicates = {
   nullElement: value => isDataElement( value, 'null' ),
   arrayElement: value => isDataElement( value, 'array' ),
   objectElement: value => isDataElement( value, 'object' ),
-  fragmentElement: value => value.nodeType === 11
+  parentElement: value => [ 1, 9, 11 ].includes( value.nodeType )
 }
 
-const selfOrDescendant = node =>
-  node.matches( '[data-type]' ) ? node : node.querySelector( '[data-type]' )
+const dataDescendants = node =>
+  Array.from( node.children ).reduce( ( arr, child ) => {
+    if( child.matches( '[data-type]') ){
+      arr.push( child )
+    } else {
+      arr.push( ...dataDescendants( child ) )
+    }
 
-const dataChildren = node =>
-  Array.from( node.children ).map( selfOrDescendant ).filter( n => n )
+    return arr
+  }, [] )
 
 const map = {
-  stringElement: value => value.dataset.value,
+  stringElement: value =>
+    is.undefined( value.dataset.value ) ? null : value.dataset.value,
   numberElement: value => {
     const num = parseFloat( value.dataset.value )
 
     return Number.isNaN( num ) ? null : num
   },
-  booleanElement: value => value.dataset.value === 'true',
+  booleanElement: value => {
+    if( is.undefined( value.dataset.value ) ) return null
+
+    return value.dataset.value === 'true'
+  },
   nullElement: () => null,
   arrayElement: ( value, options ) => {
     const { mapper } = options
 
-    return dataChildren( value ).map( current => mapper( current, options ) )
+    return dataDescendants( value ).map( current => mapper( current, options ) )
   },
   objectElement: ( value, options ) => {
     const { mapper } = options
 
-    return dataChildren( value ).reduce( ( obj, current ) => {
+    return dataDescendants( value ).reduce( ( obj, current ) => {
       const name = current.dataset.name
 
       if( name ) obj[ name ] = mapper( current, options )
@@ -43,7 +56,7 @@ const map = {
       return obj
     }, {} )
   },
-  fragmentElement: ( value, options ) => {
+  parentElement: ( value, options ) => {
     const children = map.arrayElement( value, options )
 
     return children.length === 1 ? children[ 0 ] : children

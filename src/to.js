@@ -4,7 +4,7 @@ const is = require( '@mojule/is' )
 
 const populate = ( el, type, value, options ) => {
   const { document } = options
-  const text = document.createTextNode( value )
+  const text = document.createTextNode( JSON.stringify( value ) )
 
   el.dataset.type = type
   el.dataset.value = value

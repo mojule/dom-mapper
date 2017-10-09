@@ -17,8 +17,26 @@ const { from, to } = Mapper( options )
 
 let value = { foo: 1, bar: 'baz' }
 
+/*
+<table data-type="object">
+  <tr>
+    <th>foo</th>
+    <td data-type="number" data-value="1" data-name="foo">1</td>
+  </tr>
+  <tr>
+    <th>bar</th>
+    <td data-type="string" data-value="baz" data-name="bar">"baz"</td>
+  </tr>
+<table>
+*/
 const dom = to( value )
 
+/*
+  {
+    "foo": 1,
+    "bar": "baz"
+  }
+*/
 value = from( dom )
 ```
 

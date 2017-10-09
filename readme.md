@@ -138,54 +138,6 @@ Multiple values:
 }
 ```
 
-<style>
-  table[data-type="object"] {
-    border: 1px solid #ccc;
-    border-bottom: 0;
-    border-collapse: collapse;
-  }
-
-  table[data-type="object"] th {
-    text-align: left;
-    vertical-align: top;
-    border-right: 1px solid #ccc;
-  }
-
-  table[data-type="object"] td,
-  table[data-type="object"] th {
-    border-bottom: 1px solid #ccc;
-    padding: 0.5rem;
-  }
-
-  ol[data-type="array"] > li {
-    padding: 0.5rem;
-    border: 1px dotted #ccc;
-    border-bottom: 0;
-  }
-
-  ol[data-type="array"] > li:last-child {
-    border: 1px dotted #ccc;
-  }
-
-  ol[data-type="array"]:empty {
-    padding: 0;
-    margin: 0;
-  }
-
-  ol[data-type="array"]:empty:before {
-    content: 'empty array';
-    font-style: italic;
-  }
-
-  table[data-type="object"]:empty {
-    border: 0;
-  }
-
-  table[data-type="object"]:empty:before {
-    content: 'empty object';
-    font-style: italic;
-  }
-</style>
 <table data-type="object">
   <tr>
     <th>string</th>
@@ -367,3 +319,54 @@ Multiple values:
     </td>
   </tr>
 </table>
+
+Suggested CSS:
+
+```css
+table[data-type="object"] {
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  border-collapse: collapse;
+}
+
+table[data-type="object"] th {
+  text-align: left;
+  vertical-align: top;
+  border-right: 1px solid #ccc;
+}
+
+table[data-type="object"] td,
+table[data-type="object"] th {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+ol[data-type="array"] > li {
+  padding: 0.5rem;
+  border: 1px dotted #ccc;
+  border-bottom: 0;
+}
+
+ol[data-type="array"] > li:last-child {
+  border: 1px dotted #ccc;
+}
+
+ol[data-type="array"]:empty {
+  padding: 0;
+  margin: 0;
+}
+
+ol[data-type="array"]:empty:before {
+  content: 'empty array';
+  font-style: italic;
+}
+
+table[data-type="object"]:empty {
+  border: 0;
+}
+
+table[data-type="object"]:empty:before {
+  content: 'empty object';
+  font-style: italic;
+}
+```

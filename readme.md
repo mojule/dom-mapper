@@ -545,6 +545,7 @@ ol[data-type="array"] > li {
   border: 1px dotted #ccc;
   border-bottom: 0;
   padding: 0.5rem;
+  list-style-type: decimal;
 }
 
 ol[data-type="array"] > li:last-child {

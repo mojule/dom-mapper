@@ -48,12 +48,20 @@ The DOM representation is intended to be both semantic and human readable,
 eg an object maps to a two column name/value table, an array maps to a
 zero-indexed ordered list etc.
 
+```js
+const el = mapper.to( value )
+```
+
 ## Mapping from the DOM
 
 Compatible with, but much looser than the mapper that maps to the DOM. Your DOM
 elements can encode JSON-compatible values in a fairly free form way, you just
 add the required `data-` attributes to the nodes you want to take part in the
 mapping.
+
+```js
+const value = mapper.from( el )
+```
 
 ### Primitives
 

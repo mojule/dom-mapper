@@ -114,7 +114,7 @@ Multiple values:
 [ 1, 2 ]
 ```
 
-## example, JSON to DOM
+## Example, JSON to DOM
 
 ```json
 {
@@ -136,6 +136,190 @@ Multiple values:
   "mixedArray": [ {}, { "foo": 1, "bar": [] } ],
   "nestedArray": [ [ [ 1, 2 ], [ 3, 4 ] ], [ [ 5, 6 ], [ 7, 8 ] ] ]
 }
+```
+
+```html
+<table data-type="object">
+  <tr>
+    <th>string</th>
+    <td data-type="string" data-value="foo" data-name="string">"foo"</td>
+  </tr>
+  <tr>
+    <th>emptyString</th>
+    <td data-type="string" data-value="" data-name="emptyString">""</td>
+  </tr>
+  <tr>
+    <th>number</th>
+    <td data-type="number" data-value="-1.5" data-name="number">-1.5</td>
+  </tr>
+  <tr>
+    <th>true</th>
+    <td data-type="boolean" data-value="true" data-name="true">true</td>
+  </tr>
+  <tr>
+    <th>false</th>
+    <td data-type="boolean" data-value="false" data-name="false">false</td>
+  </tr>
+  <tr>
+    <th>null</th>
+    <td data-type="null" data-value="null" data-name="null">null</td>
+  </tr>
+  <tr>
+    <th>array</th>
+    <td>
+      <ol data-type="array" start="0" data-name="array">
+        <li data-type="number" data-value="1">1</li>
+        <li data-type="number" data-value="2">2</li>
+        <li data-type="number" data-value="3">3</li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <th>emptyArray</th>
+    <td>
+      <ol data-type="array" start="0" data-name="emptyArray"></ol>
+    </td>
+  </tr>
+  <tr>
+    <th>object</th>
+    <td>
+      <table data-type="object" data-name="object">
+        <tr>
+          <th>foo</th>
+          <td data-type="string" data-value="bar" data-name="foo">"bar"</td>
+        </tr>
+        <tr>
+          <th>baz</th>
+          <td data-type="string" data-value="qux" data-name="baz">"qux"</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th>emptyObject</th>
+    <td>
+      <table data-type="object" data-name="emptyObject"></table>
+    </td>
+  </tr>
+  <tr>
+    <th>objectArray</th>
+    <td>
+      <ol data-type="array" start="0" data-name="objectArray">
+        <li>
+          <table data-type="object">
+            <tr>
+              <th>foo</th>
+              <td data-type="number" data-value="1" data-name="foo">1</td>
+            </tr>
+            <tr>
+              <th>bar</th>
+              <td data-type="number" data-value="2" data-name="bar">2</td>
+            </tr>
+            <tr>
+              <th>baz</th>
+              <td data-type="number" data-value="3" data-name="baz">3</td>
+            </tr>
+            <tr>
+              <th>qux</th>
+              <td data-type="number" data-value="4" data-name="qux">4</td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table data-type="object">
+            <tr>
+              <th>foo</th>
+              <td data-type="number" data-value="5" data-name="foo">5</td>
+            </tr>
+            <tr>
+              <th>bar</th>
+              <td data-type="number" data-value="6" data-name="bar">6</td>
+            </tr>
+            <tr>
+              <th>baz</th>
+              <td data-type="number" data-value="7" data-name="baz">7</td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table data-type="object">
+            <tr>
+              <th>foo</th>
+              <td data-type="number" data-value="5" data-name="foo">5</td>
+            </tr>
+            <tr>
+              <th>bar</th>
+              <td data-type="string" data-value="foo" data-name="bar">"foo"</td>
+            </tr>
+          </table>
+        </li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <th>mixedArray</th>
+    <td>
+      <ol data-type="array" start="0" data-name="mixedArray">
+        <li>
+          <table data-type="object"></table>
+        </li>
+        <li>
+          <table data-type="object">
+            <tr>
+              <th>foo</th>
+              <td data-type="number" data-value="1" data-name="foo">1</td>
+            </tr>
+            <tr>
+              <th>bar</th>
+              <td>
+                <ol data-type="array" start="0" data-name="bar"></ol>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ol>
+    </td>
+  </tr>
+  <tr>
+    <th>nestedArray</th>
+    <td>
+      <ol data-type="array" start="0" data-name="nestedArray">
+        <li>
+          <ol data-type="array" start="0">
+            <li>
+              <ol data-type="array" start="0">
+                <li data-type="number" data-value="1">1</li>
+                <li data-type="number" data-value="2">2</li>
+              </ol>
+            </li>
+            <li>
+              <ol data-type="array" start="0">
+                <li data-type="number" data-value="3">3</li>
+                <li data-type="number" data-value="4">4</li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <ol data-type="array" start="0">
+            <li>
+              <ol data-type="array" start="0">
+                <li data-type="number" data-value="5">5</li>
+                <li data-type="number" data-value="6">6</li>
+              </ol>
+            </li>
+            <li>
+              <ol data-type="array" start="0">
+                <li data-type="number" data-value="7">7</li>
+                <li data-type="number" data-value="8">8</li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </td>
+  </tr>
+</table>
 ```
 
 <table data-type="object">

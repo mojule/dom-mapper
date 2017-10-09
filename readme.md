@@ -54,7 +54,7 @@ const el = mapper.to( value )
 
 ## Mapping from the DOM
 
-Compatible with, but much looser than the mapper that maps to the DOM. Your DOM
+Compatible with (but much looser than) the mapper that maps to the DOM. Your DOM
 elements can encode JSON-compatible values in a fairly free form way, you just
 add the required `data-` attributes to the nodes you want to take part in the
 mapping.

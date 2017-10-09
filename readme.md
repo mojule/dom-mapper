@@ -170,7 +170,7 @@ const from = require( './path/to/some/custom/from' )
 const mapper = Mapper( { to, from } )
 ```
 
-See the defaults under `/src/` to see how they are implemented, or
+See the defaults under [`/src/`](/src/) to see how they are implemented, or
 [mojule mapper](https://github.com/mojule/mapper) for more documentation on how
 the mapper works.
 

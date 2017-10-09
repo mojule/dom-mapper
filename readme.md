@@ -4,6 +4,18 @@ Map from a value to the DOM, or from the DOM to a value
 
 `npm install @mojule/dom-mapper`
 
+```js
+const Mapper = require( '@mojule/dom-mapper' )
+
+const { from, to } = Mapper()
+
+let value = { foo: 1, bar: 'baz' }
+
+const dom = to( value )
+
+value = from( dom )
+```
+
 ## mapping to the DOM
 
 Will convert any JSON-compatible value to a DOM representation

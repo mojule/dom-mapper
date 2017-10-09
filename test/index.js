@@ -65,4 +65,8 @@ describe( 'dom-mapper', () => {
 
     assert.deepEqual( result, expect )
   })
+
+  it( 'requires a document instance', () => {
+    assert.throws( () => Mapper() )
+  })
 })

@@ -7,7 +7,13 @@ Map from a value to the DOM, or from the DOM to a value
 ```js
 const Mapper = require( '@mojule/dom-mapper' )
 
-const { from, to } = Mapper()
+/*
+  requires a document instance - can be window.document in the browser, or you
+  can use one created by JSDOM et al.
+*/
+const options = { document }
+
+const { from, to } = Mapper( options )
 
 let value = { foo: 1, bar: 'baz' }
 

@@ -32,7 +32,7 @@ const map = {
   numberElement: value => {
     const num = parseFloat( value.dataset.value )
 
-    return Number.isNaN( num ) ? null : num
+    return Number.isFinite( num ) ? num : null
   },
   booleanElement: value => {
     if( is.undefined( value.dataset.value ) ) return null

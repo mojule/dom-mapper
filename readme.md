@@ -74,7 +74,8 @@ attribute. If the `data-value` attribute is missing, they will return `null`.
 For `string`, the resultant string will be the value of the attribute.
 
 For `number`, the result of passing the attribute value string to `parseFloat`
-will be used, with `null` returned if the result is `NaN`.
+will be used, with `null` returned if the result is `NaN`, `Infinity` or
+`-Infinity`.
 
 For `boolean`, `true` will be returned if and only if the attribute value
 exactly matches `"true"`, otherwise `false` will be returned.

@@ -99,7 +99,7 @@ be searched for descendants that do in the same manner as mapping an `array`,
 except with the caveat that if only a single value is found, that value is
 returned rather than an array with a length of one.
 
-Single matching value:
+### Single matching value
 
 ```html
 <div>
@@ -112,7 +112,7 @@ Single matching value:
 1
 ```
 
-Multiple values:
+### Multiple values
 
 ```html
 <div>
@@ -127,6 +127,8 @@ Multiple values:
 ```
 
 ## Example, JSON to DOM
+
+### Input
 
 ```json
 {
@@ -150,6 +152,8 @@ Multiple values:
 }
 ```
 
+### Output
+
 ```html
 <table data-type="object">
   <tr>
@@ -516,7 +520,7 @@ Multiple values:
   </tr>
 </table>
 
-Suggested CSS:
+### Suggested CSS
 
 ```css
 table[data-type="object"] {

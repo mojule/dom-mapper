@@ -150,7 +150,7 @@ returned rather than an array with a length of one.
 [ 1, 2 ]
 ```
 
-## Example, JSON to DOM
+## Complex example, JSON to DOM
 
 ### Input
 

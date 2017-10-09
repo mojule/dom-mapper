@@ -16,7 +16,7 @@ const dom = to( value )
 value = from( dom )
 ```
 
-## mapping to the DOM
+## Mapping to the DOM
 
 Will convert any JSON-compatible value to a DOM representation
 
@@ -24,14 +24,14 @@ The DOM representation is intended to be both semantic and human readable,
 eg an object maps to a two column name/value table, an array maps to a
 zero-indexed ordered list etc.
 
-## mapping from the DOM
+## Mapping from the DOM
 
 Compatible with, but much looser than the mapper that maps to the DOM. Your DOM
 elements can encode JSON-compatible values in a fairly free form way, you just
 add the required `data-` attributes to the nodes you want to take part in the
 mapping.
 
-### primitives
+### Primitives
 
 Elements with a `data-type` attribute of `string`, `number`, `boolean`, `null`,
 `array` or `object` will be converted to their matching value.
@@ -47,10 +47,10 @@ will be used, with `null` returned if the result is `NaN`.
 For `boolean`, `true` will be returned if and only if the attribute value
 exactly matches `"true"`, otherwise `false` will be returned.
 
-### arrays
+### Arrays
 
 Elements with `data-type="array"` will return an array containing the mapped
-results of any descendant elements with a `data-type` attribute, excluding any
+results of any descendant elements with a `data-type` attribute; excluding any
 descendants of those descendants, to allow for nesting of arrays and objects.
 
 This allows you to have child elements with varying amounts of nesting for
@@ -70,7 +70,7 @@ display or semantic purposes and still get the expected result:
 [ 1, "foo" ]
 ```
 
-### objects
+### Objects
 
 Elements with `data-type="object"` are mapped in the same way as `array`, except
 descendant nodes are expected to also have a `data-name` attribute. Any nodes
@@ -95,9 +95,9 @@ without this attribute are skipped:
 ## Finding data elements
 
 If the root node you pass in doesn't match any of the above patterns, it will
-be searched for descendants that do in the same way as when mapping an `array`,
+be searched for descendants that do in the same manner as mapping an `array`,
 except with the caveat that if only a single value is found, that value is
-returned instead of an array with a length of one.
+returned rather than an array with a length of one.
 
 Single matching value:
 
@@ -538,9 +538,9 @@ table[data-type="object"] th {
 }
 
 ol[data-type="array"] > li {
-  padding: 0.5rem;
   border: 1px dotted #ccc;
   border-bottom: 0;
+  padding: 0.5rem;
 }
 
 ol[data-type="array"] > li:last-child {
@@ -548,8 +548,8 @@ ol[data-type="array"] > li:last-child {
 }
 
 ol[data-type="array"]:empty {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 ol[data-type="array"]:empty:before {
